@@ -1,0 +1,12 @@
+services:
+  github-runner:
+    image: my-github-runner:latest
+    container_name: github-runner
+    restart: unless-stopped
+
+    environment:
+      REPO_URL: ${REPO_URL}
+      ACCESS_TOKEN: ${ACCESS_TOKEN}
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

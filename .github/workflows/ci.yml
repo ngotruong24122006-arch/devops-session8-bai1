@@ -1,0 +1,22 @@
+name: Docker DooD Test
+
+on:
+  push:
+    branches: ["main", "master"]
+
+jobs:
+  docker-test:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Check Docker version
+        run: docker version
+
+      - name: Check Docker info
+        run: docker info
+
+      - name: Build Docker image
+        run: docker build -t quickbite-test .

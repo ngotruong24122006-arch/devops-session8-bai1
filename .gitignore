@@ -1,0 +1,17 @@
+# Environment variables
+.env
+.env.*
+
+# Allow example environment file
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Docker
+*.pid
+
+# OS generated files
+.DS_Store
+Thumbs.db
